@@ -18,8 +18,8 @@ It lets you create, view, and delete posts — with a responsive UI built using 
 
 1. **Clone the repository**
 ```bash
-git clone <repo-url>
-cd thoughtforge
+git clone https://github.com/Misba0019/ThoughtForge.git
+cd ThoughtForge
 ```
 
 2. **Install dependencies**
@@ -44,3 +44,6 @@ http://localhost:3000
 
 Images used in this project are sourced from [Unsplash](https://unsplash.com).
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
