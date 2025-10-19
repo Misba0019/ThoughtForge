@@ -1,0 +1,29 @@
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h1 class="text-center mb-4 fw-bold">Create a New Thought</h1>
+
+    <form action="/posts" method="POST" class="bg-white p-4 rounded shadow-sm">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Post title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" name="image" id="image" class="form-control" placeholder="Optional image link">
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea name="content" id="content" class="form-control" rows="6" placeholder="Write your post..."
+                required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Publish Post</button>
+    </form>
+</div>

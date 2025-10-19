@@ -1,0 +1,32 @@
+<style>
+    body {
+        background-color: #fff;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">
+            <%= post.title %>
+        </h1>
+        <p class="text-muted">
+            <%= post.createdAt.toDateString() %>
+        </p>
+    </div>
+
+    <% if (post.image) { %>
+        <img src="<%= post.image %>" class="img-fluid rounded mb-4 shadow-sm" alt="Post image">
+        <% } %>
+
+            <div class="fs-5 lh-lg">
+                <%= post.content %>
+            </div>
+
+            <div class="mt-5">
+                <a href="/posts" class="btn btn-outline-secondary">← Back to All Posts</a>
+
+                <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+</div>

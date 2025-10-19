@@ -1,0 +1,37 @@
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<div class="text-center mb-5 mt-4">
+    <h1 class="fw-bold">All Posts</h1>
+    <p class="text-muted">Explore the latest thoughts forged by you.</p>
+    <a href="/posts/new" class="btn btn-primary mt-3">+ Create New Post</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <% posts.forEach(post=> { %>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <% if (post.image) { %>
+                        <img src="<%= post.image %>" class="card-img-top" alt="Post image">
+                        <% } %>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= post.title %>
+                                </h5>
+                                <p class="card-text text-muted">
+                                    <%= post.content.substring(0, 120) %>...
+                                </p>
+                                <a href="/posts/<%= post._id %>" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                            <div class="card-footer bg-white border-0 text-muted small text-end">
+                                <%= post.createdAt.toDateString() %>
+                            </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</div>

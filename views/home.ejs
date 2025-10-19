@@ -1,0 +1,39 @@
+<style>
+    body {
+        background: url('https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1073') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .btn-custom {
+        background-color: #ffc107;
+        color: #000;
+        border: none;
+        font-weight: bold;
+    }
+
+    .btn-custom:hover {
+        background-color: #e0a800;
+    }
+</style>
+
+<div class="overlay">
+    <h1 class="display-3 fw-bold mb-3">Welcome to ThoughtForge 🧠</h1>
+    <p class="lead mb-4">Where your ideas ignite and your thoughts take shape.</p>
+
+    <div>
+        <a href="/posts" class="btn btn-custom btn-lg me-3">Explore Posts</a>
+        <a href="/posts/new" class="btn btn-outline-light btn-lg">Create a Post</a>
+    </div>
+</div>
