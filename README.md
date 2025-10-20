@@ -14,7 +14,18 @@ It lets you create, view, and delete posts — with a responsive UI built using 
 
 ---
 
-## Quick Start
+## Technologies Used
+
+- Node.js  
+- Express  
+- MongoDB  
+- Mongoose  
+- EJS  
+- Bootstrap 5
+
+---
+
+## Getting Started
 
 1. **Clone the repository**
 ```bash
@@ -43,6 +54,8 @@ http://localhost:3000
 ## Credits
 
 Images used in this project are sourced from [Unsplash](https://unsplash.com).
+
+---
 
 ## License
 
