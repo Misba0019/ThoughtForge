@@ -14,6 +14,19 @@ It lets you create, view, and delete posts — with a responsive UI built using 
 
 ---
 
+## Preview
+
+### Home Page
+![Home Page](assets/home.png)
+
+### All Posts
+![All Posts](assets/index.png)
+
+### Add Post
+![Add Product](assets/new_post.png)
+
+---
+
 ## Technologies Used
 
 - Node.js  
