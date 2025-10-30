@@ -25,6 +25,9 @@ It lets you create, view, and delete posts — with a responsive UI built using 
 ### Add Post
 ![Add Product](assets/new_post.png)
 
+### Post Page
+![Post Page](assets/post.png)
+
 ---
 
 ## Technologies Used
