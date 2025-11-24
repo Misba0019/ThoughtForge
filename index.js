@@ -6,6 +6,9 @@ const methodOverride = require('method-override');
 // Import Post model
 const Post = require('./models/post');
 
+// Import utility function
+const normalizeContent = require('./utils/normalizeContent');
+
 // App Config
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -28,8 +31,13 @@ app.get('/', (req, res) => {
 
 // INDEX route
 app.get('/posts', async (req, res) => {
-    const posts = await Post.find({});
-    res.render('posts/index', { posts });
+    try{
+        const posts = await Post.find({});
+        res.render('posts/index', { posts});
+    } catch (e) {
+        console.error(e);
+        res.status(500).send("Server Error");
+    }
 });
 
 // NEW route
@@ -39,10 +47,25 @@ app.get('/posts/new', (req, res) => {
 
 // CREATE route
 app.post('/posts', async (req, res) => {
-    const { title, image, content } = req.body;
-    await Post.create({ title, image, content });
-    res.redirect('/posts');
+    try {
+        const { title = '', image = '', content = '' } = req.body;
+
+        // normalize before saving
+        const normalized = normalizeContent(content);
+
+        await Post.create({
+            title: title.trim(),
+            image: image.trim(),
+            content: normalized
+        });
+
+        res.redirect('/posts');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
 });
+
 
 // SHOW route
 app.get('/posts/:id', async (req, res) => {
