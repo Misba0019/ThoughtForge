@@ -14,7 +14,7 @@
     direction: ltr !important;
     margin: 0;
     padding: 0;
-    max-width: 680px; /* readable measure */
+    max-width: 680px;
   }
   .post-content p { margin: 0 0 1.1em 0; }
 </style>
@@ -34,7 +34,10 @@
         <% } %>
 
             <% // Ensuring LF and split into paragraphs on 2+ newlines
-                const raw=(post.content || '').replace(/\r\n/g, '\n' ).replace(/\r/g, '\n' ); const paragraphs=raw.split(/\n{2,}/).map(p=>
+                const raw = (post.content || '')
+                .replace(/\r\n/g, '\n' )
+                .replace(/\r/g, '\n' );
+                const para = raw.split(/\n{2,}/).map(p=>
                 p.trim()).filter(Boolean);
             
                 // Small escape helper
@@ -48,16 +51,16 @@
                 } %>
             
                 <div class="post-content fs-5">
-                    <% paragraphs.forEach(function(p){ %>
+                    <% para.forEach(function(p){ %>
                         <p><%- escapeHtml(p).replace(/\n/g, '<br>' ) %></p>
-                        <% }); %>
+                    <% }); %>
                 </div>
 
             <div class="mt-3">
-                <a href="/posts" class="btn btn-outline-secondary">← Back to All Posts</a>
-
+                <a href="/posts/<%= post._id %>/edit" class="btn btn-primary ">Edit</a>
                 <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" class="d-inline">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>
+            <a href="/posts" class="mt-2 btn btn-outline-secondary">← Back to All Posts</a>
 </div>

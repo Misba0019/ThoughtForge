@@ -1,0 +1,29 @@
+<style>
+    body {
+        background-color: #f8f9fa;
+        }
+</style>
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h1 class="text-center mb-4 fw-bold">Edit Post</h1>
+
+    <form action="/posts/<%= post._id %>?_method=PUT" method="post" class="bg-white p-4 rounded shadow-sm">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="<%= post.title %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL (optional)</label>
+            <input type="text" class="form-control" name="image" id="image" value="<%= post ? post.image : '' %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" name="content" id="content" rows="6" required><%= post.content %></textarea>
+        </div>
+
+        <button type= submit class="btn btn-success">Update Post</button>
+        <a href="/posts/<%= post._id %>" class="btn btn-dark ms-2">Cancel</a>
+    </form>
+</div>

@@ -84,6 +84,29 @@ app.delete('/posts/:id', async (req, res) => {
     }
 });
 
+// EDIT route
+app.get('/posts/:id/edit', async (req, res) => {
+    const post = await Post.findById(req.params.id);
+    res.render('posts/edit', { post });
+});
+
+// UPDATE route
+app.put('/posts/:id', async (req, res) => {
+    try {
+        const { title = '', image = '', content = '' } = req.body;
+        const normalized = normalizeContent(content);
+        await Post.findByIdAndUpdate(req.params.id, {
+            title: title.trim(),
+            image: image.trim(),
+            content: normalized
+        });
+        res.redirect(`/posts/${req.params.id}`);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+});
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
