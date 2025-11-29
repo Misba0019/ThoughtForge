@@ -1,16 +1,29 @@
 # ThoughtForge 🧠
 
-A simple blog web app built with **Node.js**, **Express**, **MongoDB (Mongoose)**, and **EJS**.  
-It lets you create, view, and delete posts — with a responsive UI built using **Bootstrap** and clean EJS layouts.
+A clean, full-CRUD blog application built with **Node.js**, **Express**, **MongoDB (Mongoose)**, **EJS**, and **Bootstrap** - users can create, view, edit, and delete posts via a simple, responsive UI.
+
+---
+
+## Technologies Used
+
+- Node.js  
+- Express  
+- MongoDB  
+- Mongoose  
+- EJS  
+- Bootstrap 5
+- Custom CSS
 
 ---
 
 ## Features
 
-- Create, read, and delete blog posts
-- EJS templating with `express-ejs-layouts`
-- Responsive UI with Bootstrap
-- MongoDB integration via Mongoose
+- **Full CRUD support** (Create, Read, Update and Delete)
+- **Server-side rendering** using EJS and `express-ejs-layouts`
+- **Responsive and clean UI** with Bootstrap 5
+- **MongoDB database** powered by Mongoose models
+- **Optional image URLs** for posts
+- **RESTful routing** following standard web patterns
 
 ---
 
@@ -25,19 +38,11 @@ It lets you create, view, and delete posts — with a responsive UI built using 
 ### Add Post
 ![Add Product](assets/new_post.png)
 
+### Edit Post
+![Edit Post](assets/edit-post.png)
+
 ### Post Page
 ![Post Page](assets/post.png)
-
----
-
-## Technologies Used
-
-- Node.js  
-- Express  
-- MongoDB  
-- Mongoose  
-- EJS  
-- Bootstrap 5
 
 ---
 
@@ -60,16 +65,23 @@ npm run dev
 ```
 (or use `nodemon index.js` directly if you prefer)
 
-4. **Open in browser**
-```bash
-http://localhost:3000
-```
+4. Open in browser:`http://localhost:3000`
+
+---
+
+## Planned Improvements
+
+- User authentication (signup, login, logout)
+- Authorization (only the author can edit/delete their posts)
+- Form validation & proper error handling
+- Image upload support
+- Search functionality and basic categories/tags
 
 ---
 
 ## Credits
 
-Images used in this project are sourced from [Unsplash](https://unsplash.com).
+Images sourced from [Unsplash](https://unsplash.com).
 
 ---
 
